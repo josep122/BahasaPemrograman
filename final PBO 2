@@ -6,6 +6,14 @@ C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, S
 Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
 import java.util.Scanner;
 class Main{
 	int statusTumbuh;
@@ -40,8 +48,9 @@ class Main{
 	} 
 	public void displayPlant() {
 	System.out.println(getStatusTumbuhText());
-	System.out.println("Jumlah Air" + jumlahAir);
-	System.out.println("jumlah Pupuk:"+jumlahPupuk);
+	System.out.println("Jumlah Air : " + jumlahAir);
+	System.out.println("jumlah Pupuk : "+jumlahPupuk);
+	System.out.println("  ");
 	}
 
 
@@ -64,9 +73,7 @@ public int getStatusTumbuh(){
         int inp = 0;
         do {
             System.out.println ("Pilihan :");
-            System.out.println ("0 Untuk memberi air        | 3 untuk tumbuh");
-            System.out.println ("1 Untuk memberi pupuk      | 4 Untuk tampilan tumbuhan");
-            System.out.println ("2 Untuk cek kondisi tumbuh");
+            System.out.println ("0 Untuk memberi air  |  1 Untuk memberi pupuk");
             System.out.print ("Masukkan :");
             
             inp = sc.nextInt();
@@ -75,12 +82,6 @@ public int getStatusTumbuh(){
                     break;
                 case 1: p.beriPupuk();
                     break;
-                // case 2: p.cekKondisiTumbuh();
-                //     break;
-                // case 3: p.tumbuh();
-                //     break;
-                // case 4: p.displayPlant();
-                //     break;
             }
             p.displayPlant();
             
