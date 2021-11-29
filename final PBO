@@ -1,0 +1,86 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+import java.util.Scanner;
+class Main{
+	int statusTumbuh;
+	int jumlahAir;
+	int jumlahPupuk;
+	public Main (){
+		statusTumbuh=0;
+		jumlahAir=0;
+		jumlahPupuk=0;
+	}
+	public void beriAir(){
+	jumlahAir++;
+	cekKondisiTumbuh();
+
+	}
+	public void beriPupuk(){
+	jumlahPupuk++;
+	cekKondisiTumbuh();
+	}
+	public void cekKondisiTumbuh(){
+	if(jumlahAir>=3&&jumlahPupuk>=1) {
+	Tumbuh();
+	}
+	}
+	public void Tumbuh (){
+	if(statusTumbuh<4){
+		jumlahAir = jumlahAir-3;
+		jumlahPupuk=jumlahPupuk -1;
+		statusTumbuh++;
+	}
+	} 
+	public void displayPlant() {
+	System.out.println(getStatusTumbuh());
+	System.out.println("Jumlah Air" + jumlahAir);
+	System.out.println("jumlah Pupuk:"+jumlahPupuk);
+	}
+
+//    void tumbuh() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
+public String getStatusTumbuhText(){
+    switch (statusTumbuh){
+        case 0: return "Benih";
+        case 1: return "Tunas";
+        case 2: return "Tanaman Kecil";
+        case 3: return "Tanaman Dewasa";
+    }
+    return "Berbunga";
+}
+public int getStatusTumbuh(){
+	return statusTumbuh;
+	}
+	
+    public static void main(String[] args) {
+        Main p = new Main();
+        Scanner sc = new Scanner (System.in);
+        int inp = 0;
+        do {
+            System.out.println("Masukkan : 0 Untuk memberi air, 1 Untuk memberi pupuk, 2 Untuk cek kondisi tumbuh, 3 untuk tumbuh, 4 Untuk tampilan tumbuhan");
+            inp = sc.nextInt();
+            switch(inp){
+                case 0: p.beriAir();
+                    break;
+                case 1: p.beriPupuk();
+                    break;
+                // case 2: p.cekKondisiTumbuh();
+                //     break;
+                // case 3: p.tumbuh();
+                //     break;
+                // case 4: p.displayPlant();
+                //     break;
+            }
+            p.displayPlant();
+            
+        }while (inp!=999);
+    }
+}
