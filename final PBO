@@ -11,6 +11,7 @@ class Main{
 	int statusTumbuh;
 	int jumlahAir;
 	int jumlahPupuk;
+	
 	public Main (){
 		statusTumbuh=0;
 		jumlahAir=0;
@@ -38,14 +39,11 @@ class Main{
 	}
 	} 
 	public void displayPlant() {
-	System.out.println(getStatusTumbuh());
+	System.out.println(getStatusTumbuhText());
 	System.out.println("Jumlah Air" + jumlahAir);
 	System.out.println("jumlah Pupuk:"+jumlahPupuk);
 	}
 
-//    void tumbuh() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
 
 public String getStatusTumbuhText(){
     switch (statusTumbuh){
