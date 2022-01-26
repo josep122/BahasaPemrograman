@@ -3,15 +3,16 @@ using namespace std;
 
 int main(){
 
-    string nama = "Joseph";
-    string nim = "20200801208";
+    string nama, nim;
 
-    cout << "INI VALUE NYA\n";
-    cout << nama << endl;
-    cout << nim << endl;
+    cout << "Masukan Nama : ";
+    getline(cin, nama);
+    cout << "Masukan Nim : ";
+    cin>>nim;
 
-    cout << "INI ALAMAT MEMORYNYA\n";
-    cout << &nama << endl; 
-    cout << &nim << endl;
-    return 0;
+    cout << "Nama : " << nama << endl;
+    cout << "Alamat Nama : " << &nama << endl;
+    cout << "Nim : " << nim << endl;
+    cout << "Alamat Nim : " << &nim << endl;
+
 }
