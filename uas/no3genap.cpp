@@ -3,66 +3,59 @@
 
 using namespace std;
 
-int pilih;
-char kembali;
-struct mahasiswa{
-    char nama[100];
-    int nim;
-};
-void insert()
+// int pilih;
+// char kembali;
+// struct mahasiswa{
+//     char nama[100];
+//     int nim;
+// };
+void create()
 {
-    mahasiswa mhs;
+    string nama;
     ofstream txt;
     txt.open("soalgenap.txt", ios::app);
-    cout << "enter name data: ";
-    cin >> mhs.nama;
-    txt << mhs.nama;
-    txt << ", ";
-    cout << "enter name data: ";
-    cin >> mhs.nim;
-    txt << mhs.nim;
-    txt << "\n";
+    cout << "Masukan Nama : ";
+    cin >> nama;
+    txt << nama;
+    txt << endl;
     txt.close();
 }
-void view(){
-    string getdata;
+void read(){
+    string nama;
     ifstream txt ("soalgenap.txt");
     if(txt.is_open())
     {
         while(! txt.eof())
         {
-            getline(txt, getdata);
-            cout << getdata << endl;
+            getline(txt, nama);
+            cout << nama << endl;
+            cout << endl;
         }
     }
 }
 int main(){
-    do{
+    int pil;
+    main:
         cout<<"MENU";
         cout<<"\n 0. Exit";
         cout<<"\n 1. Create ";
         cout<<"\n 2. Read ";
-        cout<<"\nPilih : "; cin>>pilih;
-        switch(pilih){
+        cout<<"\nPilih : "; cin>>pil;
+        switch(pil){
             case 0:
                 cout<<"\nThanks"<<endl;
                 return 0;
             case 1:
-				insert();
+				create();
+                goto main;
                 break;
             case 2:
-                cout << "LIST DATA\n";
-				view();
+                read();
+                goto main;
                 break;
             default:
                 cout<<"Pilihan Salah"<<endl;
                 break;
-            }
-            cout<<"Ingin memilih menu lain (y/t)? ";
-            cin>>kembali;
-            cout<<endl;
-        }
-while (kembali!= 't');
-        cout<<"Thanks"<<endl;
-    return 0;
+            }   
+
 }
