@@ -2,27 +2,22 @@
 
 using namespace std;
 
-void fname(){
-    cout << "Joseph";
-}
+void nama(){
+    string nama;
+    cout << "Masukan Nama : ";
+     getline(cin, nama);
+     cout << "Nama : " << nama << endl;
+};
 
-void mname(){
-    cout << "Febrian";
-}
-
-void lname(){
-    cout << " (20200801208)";
-}
-
-void spasi(){
-    cout<<" ";
-}
+void nim(){
+    string nim;
+    cout << "Masukan NIM : ";
+    cin >> nim;
+    cout << "Nim : " << nim << endl;
+};
 
 int main() {
-    fname();
-    spasi();
-    mname();
-    spasi();
-    lname();
+    nama();
+    nim();
     return 0;
 }
